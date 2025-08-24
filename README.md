@@ -99,6 +99,7 @@ public class Student {
     // Getters and Setters
 }
 ### Controller(servlet)
+```java
 // StudentServlet.java (Controller)
 import java.io.*;
 import jakarta.servlet.*;
@@ -120,6 +121,7 @@ public class StudentServlet extends HttpServlet {
     }
 }
 ### view(JSP)
+```java
 <!-- student.jsp (View) -->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
