@@ -98,6 +98,40 @@ public class Student {
     }
     // Getters and Setters
 }
+### Controller(servlet)
+// StudentServlet.java (Controller)
+import java.io.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+
+public class StudentServlet extends HttpServlet {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+        throws ServletException, IOException {
+        
+        // Create Model object
+        Student student = new Student(101, "Neeraja", 88);
+
+        // Store data in request scope
+        request.setAttribute("studentData", student);
+
+        // Forward to JSP (View)
+        RequestDispatcher rd = request.getRequestDispatcher("student.jsp");
+        rd.forward(request, response);
+    }
+}
+### view(JSP)
+<!-- student.jsp (View) -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<html>
+<head><title>Student Details</title></head>
+<body>
+   <h2>Student Information</h2>
+   <p>ID: ${studentData.id}</p>
+   <p>Name: ${studentData.name}</p>
+   <p>Marks: ${studentData.marks}</p>
+</body>
+</html>
+
 
 
 
