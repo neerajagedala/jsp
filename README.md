@@ -44,4 +44,60 @@ This project demonstrates how to connect a **JSP page with a MySQL database** us
 
 This ensures smooth interaction between **JSP** and **MySQL Database**.
 
+# MVC Architecture using Servlet and JSP
+
+**Date:** 24 August 2025  
+
+---
+
+## 📌 Introduction  
+
+The **MVC (Model–View–Controller)** is a design pattern used to separate concerns in web applications.  
+It helps in organizing code for **better readability, maintainability, and scalability**.  
+
+In Java web applications, **Servlets and JSP** are often used to implement MVC:  
+
+- **Model** → Represents data and business logic. (Java Classes, Database interaction with JDBC, Hibernate, etc.)  
+- **View** → Presentation layer for displaying data to the user. (JSP pages, HTML, CSS, JS)  
+- **Controller** → Handles client requests and coordinates between Model and View. (Servlets)  
+
+##  MVC Workflow with Servlet & JSP  
+
+1. **Client Request**  
+   - The user sends a request through a web browser (e.g., form submission, link click).  
+
+2. **Controller (Servlet)**  
+   - The servlet receives the request.  
+   - It processes the input, interacts with the Model, and decides which View (JSP) to forward the response to.  
+
+3. **Model (Java Class / Database)**  
+   - Contains business logic and data.  
+   - Handles database operations (via JDBC, Hibernate, etc.).  
+   - Returns results to the Controller.  
+
+4. **View (JSP)**  
+   - The JSP page displays data sent by the Controller.  
+   - It contains presentation logic only (HTML, CSS, JavaScript, JSTL, EL).  
+
+5. **Response to Client**  
+   - The processed data is shown to the user through the JSP.  
+##  Example MVC Flow  
+
+###  Model (Java Class)
+```java
+// Student.java (Model)
+public class Student {
+    private int id;
+    private String name;
+    private int marks;
+
+    public Student(int id, String name, int marks) {
+        this.id = id;
+        this.name = name;
+        this.marks = marks;
+    }
+    // Getters and Setters
+}
+
+
 
